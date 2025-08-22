@@ -39,7 +39,6 @@ public class AdminController {
         return ResponseEntity.ok("UserRole is Updated Successfully");
 
     }
-
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?>deleteUser(Long id){
