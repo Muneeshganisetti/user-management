@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
     @Autowired
     private AuthService service;
-
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody SignupRequest request){
         try{
