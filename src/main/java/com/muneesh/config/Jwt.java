@@ -25,8 +25,6 @@ public class Jwt {
         Map<String, Object> claims = new HashMap<>();
         // Store roles in the correct Spring Security format
         claims.put("roles", List.of("ROLE_" + user.getRole().name().toUpperCase()));
-
-
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(user.getId().toString()) // user ID as subject
