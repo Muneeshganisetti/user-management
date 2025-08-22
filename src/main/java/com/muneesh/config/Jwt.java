@@ -21,12 +21,11 @@ public class Jwt {
     private final SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     private final long expiry = 3600L; // in seconds
 
+
     public String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
         // Store roles in the correct Spring Security format
         claims.put("roles", List.of("ROLE_" + user.getRole().name().toUpperCase()));
-
-
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(user.getId().toString()) // user ID as subject
