@@ -23,8 +23,6 @@ public class SecurityConfig {
     private final CustomUserDetails details; // this is used to get the user details from the database
     private final JwtAuthenticationFilter jwtAuthenticationFilter; // this is used to filter the request and response
     private final PasswordConfig config;
-
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.
@@ -48,7 +46,6 @@ public class SecurityConfig {
         return provider;
 
     }
-
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
