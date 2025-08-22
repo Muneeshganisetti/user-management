@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @RequestMapping("/Auth")
 public class AuthController {
     @Autowired
     private AuthService service;
-
     @PostMapping("/signup")
     public ResponseEntity<?> signup(@RequestBody SignupRequest request){
         try{
@@ -32,9 +32,6 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request){
         LoginResponse response = service.login(request);
-
-
-
         return ResponseEntity.ok(response);
     }
 }
