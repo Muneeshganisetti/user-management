@@ -21,6 +21,7 @@ public class Jwt {
     private final SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     private final long expiry = 3600L; // in seconds
 
+
     public String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
         // Store roles in the correct Spring Security format
