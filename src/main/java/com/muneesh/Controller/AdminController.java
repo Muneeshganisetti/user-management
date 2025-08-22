@@ -30,8 +30,6 @@ public class AdminController {
                 "users", users
         ));
     }
-
-
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateUser(
